@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="membresia-container">
+        <h2>Registro de Membresía</h2>
+        <form method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br>
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="numero">Número de teléfono:</label>
+            <input type="text" id="numero" name="numero" required><br>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required><br>
+            <button type="submit">Guardar</button>
+        </form>
+        {% if mensaje %}
+            <p style="color:green;">{{ mensaje }}</p>
+            <p>Reservas realizadas: {{ user_reservas }}</p>
+            <p>Tu rango de membresía es: <strong>{{ rank }}</strong></p>
+            {% if rank == "Plata" %}
+                <p>¡Sigue reservando para subir de rango!</p>
+            {% elif rank == "Oro" %}
+                <p>¡Estás cerca de ser Diamante!</p>
+            {% elif rank == "Diamante" %}
+                <p>¡Felicidades, eres miembro Diamante!</p>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endblock %}

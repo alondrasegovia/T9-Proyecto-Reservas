@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ hotel.nombre }}</h2>
+<ul>
+    {% for hab in habitaciones %}
+        <li>
+            <h3>{{ hab.tipo }} - ${{ hab.precio }} pesos</h3>
+            <img src="{{ url_for('static', filename=hab.foto) }}" width="200">
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

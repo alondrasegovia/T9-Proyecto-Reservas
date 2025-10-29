@@ -1,0 +1,24 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ESTRELLA DE ATACAMA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+        <nav class="main-nav">
+        <a href="{{ url_for('index') }}">Inicio</a>
+        <a href="{{ url_for('membresia') }}">Membresía</a>
+    </nav>
+    
+    <main>
+         {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>© 2025 ESTRELLA DE ATACAMA</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ tour.nombre }}</h2>
+<ul>
+    {% for op in opciones %}
+        <li>
+            <h3>{{ op.nombre }} - ${{ op.precio }} pesos</h3>
+            <p>{{ op.descripcion }}</p>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

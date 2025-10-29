@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Reserva {{ tipo|capitalize }}</h2>
+    <p>Has seleccionado: <b>{{ seleccion.tipo if tipo == 'hotel' else seleccion.nombre }}</b> 
+       del {{ item.nombre }}</p>
+    <p>Precio: ${{ seleccion.precio }} pesos</p>
+
+    <form method="POST">
+        <label>Nombre:</label>
+        <input type="text" name="nombre" required>
+        <label>Email:</label>
+        <input type="email" name="email" required>
+        <button type="submit">Confirmar Reserva</button>
+    </form>
+{% endblock %}
